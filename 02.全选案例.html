@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .box {
+      width: 100px;
+      padding: 20px;
+      /* dashed:虚线样式 solid:实线样式 */
+      border: 1px solid blueviolet;
+      /* 外边距实现居中 */
+      margin: 150px auto;
+      /* 圆角样式 */
+      border-radius: 50px;
+    }
+
+    hr {
+      margin: 10px auto;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 准备一个div包括所有按钮 -->
+  <div class="box">
+    全选:<input type="checkbox"><br>
+    <hr>
+    <input type="checkbox"> 选项1 <br>
+    <input type="checkbox"> 选项2 <br>
+    <input type="checkbox"> 选项3 <br>
+    <input type="checkbox"> 选项4 <br>
+  </div>
+
+  <script>
+    // 1.获取元素
+    var allbtn = document.querySelector('input')
+    // :nth-child(n)选择器匹配属于其父元素的第N个子元素,不论元素的类型.
+    // n+2从第二个开始
+    var items = document.querySelectorAll('input:nth-child(n+2)')
+
+    // console.log(allbtn)
+    // console.log(items)
+    // 2.给全选按钮绑定事件
+    allbtn.onclick = function () {
+      // 2.1 拿到选中状态
+      var type = allbtn.checked
+      // console.log(type)
+      // 2.2 把自己的选中状态设置给每一个选项按钮
+      for (var i = 0; i < items.length; i++) {
+        items[i].checked = type
+      }
+    }
+    // 3.用循环给子按钮绑定点击事件
+    for (var i = 0; i < items.length; i++) {
+      items[i].onclick = function () {
+        // 3.1 定义假设变量,假设所有按钮都是选中的
+        var flag = true
+        // 3.2 通过循环验证假设
+        for (var j = 0; j < items.length; j++) {
+          // 只要有一个box是false ,flag为false
+          if (items[j].checked == false) {
+            flag = false
+            break
+          }
+        }
+        // console.log(flag)
+        allbtn.checked = flag
+      }
+    }
+        // items.onclick = function(){
+        //     var i1 = items.checked
+            // console.log(i1)
+        //     if (i1,i2,i3,i4 = true){
+        //     allbtn = true
+        // }
+        // }
+        // items[1].onclick = function(){
+        //     var i2 = items[1].checked
+        //     // console.log(i1)
+        // }
+        // items[2].onclick = function(){
+        //     var i3 = items[3].checked
+        //     // console.log(i1)
+        // }
+        // items[3].onclick = function(){
+        //     var i4 = items[4].checked
+        //     // console.log(i1)
+        // }
+  </script>
+</body>
+
+</html>

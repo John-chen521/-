@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /* 现有一组人员年龄的数据，要求将这些人员的年龄按照从小到大的顺序进行排列起来，要怎样来实现 */
+    /*  function numberSort (a, b) {
+       return a - b;
+     }
+     var arr = new Array("23", "6", "12", "35", "76");
+     document.write(arr.sort(numberSort)); */
+    /* sort() 方法用原地算法对数组的元素进行排序，并返回数组。
+    默认排序顺序是在将元素转换为字符串，然后比较它们的UTF - 16代码单元值序列时构建的
+    执行的机制（两数比较，小的排在大的前面）
+    升序排序 return  a - b； 降序排序 return b - a。 */
+
+
+    /* 以下代码执行后，result 的值是： */
+    /* var result = Math.round(11.5) + Math.round(-11.5);
+    console.log(result) */
+    /*Math.round() 函数返回一个数字四舍五入后最接近的整数。
+    Math.round(num) num小数大于或等于5的话 朝大的方向 进一  
+    如果参数的小数部分恰好等于0.5，则舍入到相邻的在正无穷（+∞）方向上的整数。*/
+
+    /* 执行以下程序，输出结果为 */
+    /* let num = (function (x) { delete x; return x; })(47);
+    console.log(num); */
+
+    /*
+     delete 操作符用于删除对象的某个属性；如果没有指向这个属性的引用，那它最终会被释放。
+    */
+
+    /*
+    第一种方式：jsonp请求；jsonp的原理是利用<script>标签的跨域特性，可以不受限制地从其他域中加载资源，类似的标签还有<img>.
+    第二种方式：document.domain；这种方式用在主域名相同子域名不同的跨域访问中
+    第三种方式：window.name；window的name属性有个特征：在一个窗口(window)的生命周期内,窗口载入的所有的页面都是共享一个window.name的，
+    每个页面对window.name都有读写的权限，
+    window.name是持久存在一个窗口载入过的所有页面中的，并不会因新页面的载入而进行重置。
+    第四种方式：window.postMessage；window.postMessages是html5中实现跨域访问的一种新方式，可以使用它来向其它的window对象发送消息，
+    无论这个window对象是属于同源或不同源。
+    第五种方式：CORS；CORS背后的基本思想，就是使用自定义的HTTP头部让浏览器与服务器进行沟通，从而决定请求或响应是应该成功还是应该失败。
+    第六种方式：Web Sockets；web sockets原理：在JS创建了web socket之后，会有一个HTTP请求发送到浏览器以发起连接。取得服务器响应后，
+    建立的连接会使用HTTP升级从HTTP协议交换为web sockt协议。
+    */
+
+
+    /* 执行以下程序，会抛出语法错误的式子是*/
+    /* var s = Symbol('key');
+    console.log(s + '123');
+    //Symbol 值不能与其他类型的值进行运算，会报错。
+    // Cannot convert a Symbol value to a string
+    var obj = {
+      [s]: function () { console.log(1); }
+    }
+    var b = Reflect.ownKeys(obj); */
+
+
+    /* 执行以下程序，下列选项中，说法错误的是（） */
+    /* function fn () {
+      // fn()包着一个匿名函数function，形成闭包
+      var num = 0;
+      return function () {
+        // 只要是fn()这种形式执行的，this都是默认绑定指向window
+        console.log(++num);
+      }
+    }
+    var fun = fn();
+    fun(); // 1
+    // num先自增1后赋值 值为1 
+    fun(); */
+    /* （闭包中的变量不会被垃圾回收，因为还保持着引用，因此num的值还是1，自增变成2）
+
+    一个函数和对其周围状态（lexical environment，词法环境）的引用捆绑在一起
+    （或者说函数被引用包围），这样的组合就是闭包（closure）。也就是说，
+    闭包让你(可以在一个内层函数中访问到其外层函数的作用域)。在 JavaScript 中，
+    每当创建一个函数，闭包就会在函数创建的同时被创建出来。
+    */
+
+    /* 执行以下程序，下列选项中，说法正确的是 */
+    /* function a () {
+      console.log(1);
+      return function b () {
+        console.log(2);
+      }
+    }
+    var btn = document.querySelector('button');
+    // dom0级事件处理程序是将一个函数赋值给元素的事件处理程序属性：注意是赋值而不是调用
+    btn.onclick = a();// 1 相当于把元素btn的点击事件处理程序赋值为a执行完毕后的返回值b
+    btn.onclick = a; // 2 相当于把元素btn的点击事件处理程序直接赋值为a函数，而a函数返回b() */
+
+    /* 对于代码 var a = 10.42; 取出 a 的整数部分，以下代码哪些是正确的？ */
+    var a = 10.42
+    console.log(parseInt(a)); // 10
+    // parseInt(string, radix)   解析一个字符串并返回指定基数的十进制整数， 
+    // radix 是2 - 36之间的整数，表示被解析字符串的基数。
+    // string
+    // 要被解析的值。如果参数不是一个字符串，则将其转换为字符串(使用  ToString 抽象操作)。
+    // 字符串开头的空白符将会被忽略。
+    console.log(Math.floor(a)); // 10
+    // Math.floor() 返回小于或等于一个给定数字的最大整数。
+    // 可以理解 Math.floor()为向下取整 
+    console.log(Math.ceil(a)); // 11
+    // Math.ceil() 函数返回大于或等于一个给定数字的最小整数。
+    a.split('.')[0]; // Uncaught TypeError: a.split is not a function
+    // split() 方法使用指定的分隔符字符串将一个String对象分割成子字符串数组，
+    // 以一个指定的分割字串来决定每个拆分的位置。
+
+
+
+
+  </script>
+  <button>点击</button>
+</body>
+
+</html>

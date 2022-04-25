@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+
+    /* JavaScript 是一种专门为与网页交互而设计的语言，由下列三个不同的部分组成：
+    
+    ECMAScript，提供核心语言功能
+    文档对象模型（DOM），提供访问和操作网页内容的方法和接口
+    浏览器对象模型（BOM）， 提供与浏览器交互的方法和接口 */
+    /*    var str1 = new RegExp("e");
+       document.write(str1.exec("hello"));
+       document.write('2' + 3 + 4); 
+       e
+       234
+       */
+    /* 与 var 关键字不同，使用 let 在全局作用域中声明的变量不会成为 window 对象的属性（var 声明的变量则会) */
+    // let a = 'w'
+    var a = 'w'
+    // 若是var 则会成为window对象的属性
+    let obj = {
+      a: 'o',
+      print: function () {
+        console.log(this.a);
+      },
+    }
+    let p = obj.print;
+    obj.print();
+    // o
+    p();
+    // undefind
+  </script>
+</body>
+
+</html>

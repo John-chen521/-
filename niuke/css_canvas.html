@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+  <style type="text/css">
+    canvas {
+      border: 1px solid black;
+      width: 250px;
+      height: 500px;
+    }
+
+    /* 
+    不能使用CSS样式控制canvas元素的宽高，否则会导致绘制的图形拉伸
+    原因：因为canvas的默认高度是(height)300*150，所以如果使用css为canvas设置width和height，
+    会导致canvas绘制的图像被压缩。所以开发中使用width与height属性来设置canvas的宽高，而不是通过CSS。
+        canvas画布宽高只能通过数值设定，不能使用百分比，也不需要单位。
+    */
+  </style>
+</head>
+
+<body>
+  <canvas id="cav" width="250" height="250">浏览器不支持</canvas>
+  <script type="text/javascript">
+    window.addEventListener("load", () => {
+      var can = document.getElementById('cav');
+      var ctx = can.getContext("2d");
+      ctx.fillStyle = "rgb(0,0,255)";
+      ctx.fillRect(0, 0, 20, 10);
+      //context.fillRect(x,y,width,height);
+    })
+  </script>
+</body>
+
+</html>

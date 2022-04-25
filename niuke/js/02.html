@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /*   var foo = 'foo';
+  
+      var bar = 'bar';
+  
+      function myFunc () {
+  
+        return foo + bar;
+      }
+  
+      myFunc();
+      //'foobar' */
+  
+
+
+
+
+
+
+   /*  var arr = new Array(3);
+    // 创建一个长度为3的数组
+    // js的标准内置对象中有Array
+    // JavaScript的 Array 对象是用于构造数组的全局对象，
+    // 数组是类似于列表的高阶对象。
+    // Array() 构造器 用于创建 Array 对象。
+    // construct from array length
+    // new Array(arrayLength)
+    // 可以通过单个数字参数的构造器创建数组，
+    // 数组的长度为传入的参数，该数组不包含任何实际的元素
+    arr[0] = 1;
+    arr.b = 0;
+    //通过点操作符（.）添加的属性和length属性处于同一层级，不会影响length的值。
+    console.log(arr.length);
+    // 3
+    arr.forEach(value => {
+      console.log(value);
+      // 结果是1 ，因为此时遍历的是【1，empty ，empty ，b:0】 
+      // 通过点操作符（.）添加的属性可以用for...in...循环遍历，但不能用foreach循环遍历。
+    })
+    for (var i in arr) {
+      console.log(arr[i]);
+      // 结果是1，0 ，因为此时遍历的是【1，empty ，empty ，b:0】
+      // 通过点操作符（.）添加的属性可以用for...in...循环遍历
+      // for in既能遍历数组，也能遍历对象；
+      // for in遍历数组时i是下标，遍历对象时i是对象的key
+    } */
+
+
+    /*
+    关于JavaScript的原始类型（primitive type）的描述 
+    undefined值是通过null派生出来的，==时它会自动转化为null，
+    所以返回true。不过如果用严格比较符===，不发生转化，将返回false。
+    */
+
+
+    /* 
+        console.log(1);
+        let a = setTimeout(() => { console.log(2) }, 0); */
+    /* 同步→异步→回调
+
+promise是异步微任务，
+
+setTimeout是异步宏任务，
+
+微任务比宏任务先执行，所以取消了定时器回调 
+Promise比setTimeout()先执行。因为Promise定义之后便会立即执行，
+其后的**.then()是异步里面的微任务**，而setTimeout()是异步的宏任务。异步任务中先执行微任务后执行宏任务。
+也就是说， promise 在实例化的过程中所执行的代码都是同步进行的，而 then 中注册的回调才是异步执行的。
+在同步代码执行完成后才会去检查是否有异步任务，并执行对应的回调，而微任务又会在宏任务之前执行。
+
+宏任务包括：setTimeout setInterval Ajax DOM事件
+微任务：Promise async/await
+微任务比宏任务的执行时间要早
+
+*/
+ /*    console.log(3);
+    Promise.resolve(4).then((b) => { */
+      // b是任意值 代表value
+      /* Promise.resolve(value)方法返回一个以给定值解析后的Promise 对象。
+      如果这个值是一个 promise ，那么将返回这个 promise ；
+      如果这个值是thenable（即带有"then" 方法），
+      返回的promise会“跟随”这个thenable的对象，采用它的最终状态；
+      否则返回的promise将以此值完成。此函数将类promise对象的多层嵌套展平。
+      value
+      将被Promise对象解析的参数，也可以是一个Promise对象，或者是一个thenable。
+      返回一个带着给定值解析过的Promise对象，如果参数本身就是一个Promise对象，则直接返回这个Promise对象。
+      
+      */
+      /* console.log(b);
+      clearTimeout(a);
+    });
+    console.log(5); */
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			a{
+				font-size: 20px;
+			}
+			img{
+				display: block;
+				width: 31.25rem;
+			}
+		
+		</style>
+	</head>
+	<body>
+		<a id="link" href="案例.html">链接</a>
+		<img id="img" src="../004/女孩，卡通人物.png" alt="">
+		<div id="box" style="width: 100px;" class="active">格局</div>
+		<input id="input1" type="text" value="请输入密码" />
+		<p id="txt">
+			这是文字内容
+			<span>2111</span>
+		</p>
+		<script>
+			var link = document.getElementById('link');
+			var img = document.getElementById('img');
+			var box = document.getElementById('box');
+			var input1 = document.getElementById('input1');
+			// console.log(box.id)
+			// console.log(box.className)
+			console.log(txt.innerHTML)
+			console.log(input1.value)
+			// 获取路径为绝对路径
+			console.log(link.href)
+			console.log(img.src)
+			console.log(img.tagName)
+			console.log(link.tagName)
+			
+			box.onclick = function(){
+				// box.style.width = '500px';
+				// box.style.height = '200px';
+				// box.style.background = 'yellow';
+				// cssText能替换当前所有的行间属性
+				box.style.cssText = 'width: 300px;height: 200px;background: #0000FF;'
+			}	
+			txt.innerHTML = '格局'
+		</script>
+	</body>
+</html>

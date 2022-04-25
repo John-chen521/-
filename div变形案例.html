@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style>
+    #box {
+      width: 100px;
+      height: 100px;
+      background: #000000;
+      border: 4px solid #00FFFF;
+    }
+
+    .mask {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: rgba(0, 0, 0, .5);
+      display: block;
+    }
+
+    .select {
+      width: 400px;
+      height: 260px;
+      background: #00FFFF;
+      border: 20px solid #0000FF;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -200px;
+      margin-top: -130px;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 10%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <h2>设置样式：<button id="btn">点击设置</button></h2>
+    <div id="box"></div>
+  </div>
+  <div id="maskbox" class="mask">
+    <div class="select">
+      <ul class="setList">
+        <li>
+          <span class="title">请选择背景色：</span>
+          <span id="red">红</span>
+          <span id="yellow">黄</span>
+          <span id="blue">蓝</span>
+        </li>
+        <li>
+          <span class="title">请选择宽(px)：</span>
+          <span id="w200">200</span>
+          <span id="w300">300</span>
+          <span id="w400">400</span>
+        </li>
+        <li>
+          <span class="title">请选择高(px)：</span>
+          <span id="h200">200</span>
+          <span id="h300">300</span>
+          <span id="h400">400</span>
+        </li>
+      </ul>
+      <button>恢复</button>
+      <button>确定</button>
+    </div>
+  </div>
+  <script>
+    /* 	功能分析：
+        1.点击按钮，显示设置页面
+          获取按钮
+          绑定点击事件
+          显示设置页面
+            display */
+
+  </script>
+</body>
+
+</html>

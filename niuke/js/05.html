@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // for (var i = 0; i < 5; ++i) {
+    // 55555
+    /* for (let i = 0; i < 5; ++i) {
+      // 01234
+      setTimeout(function () {
+        console.log(i + ' ');
+      }, 100);
+    } */
+
+    /*
+    JSON数据
+    JSON 语法是 JavaScript 语法的子集。
+    JSON 语法是 JavaScript 对象表示语法的子集。
+    数据在名称/值对中
+    数据由逗号分隔
+    大括号 {} 保存对象
+    中括号 [] 保存数组，数组可以包含多个对象
+    ｛"name":"xiaoming","age":"student"｝
+    */
+
+    /*
+    三元操作符
+    var x=y===true?”true”:”false”;
+    */
+
+    /* var test = (function () {  //test是一个自执行函数，自执行函数里返回了一个箭头函数
+      var num = 0             //故test()的时候是调用执行了箭头函数
+      return () => {  // 立即执行函数表达式执行之后，返回的是一个箭头函数（但是并没有调用箭头函数）
+        return num++
+        console.log(num);
+      }
+    }())
+    for (var i = 0; i < 20; i++) {
+      test() // 当执行test()时才是调用了箭头函数 第一次执行test()就是在for循环里执行的
+
+    }
+    console.log(test()); */
+
+
+    /*   var test = ()
+  
+      // 可以将上面的代码拆分开分析一下，下面是()里的代码，外面的()只是为了符合语法。
+      // 下面是一个自执行函数，一开始它自己调用自己一次，（将箭头函数返回给 var test。）
+      function() {
+        var num = 0
+        return function () {
+          return num++
+        }
+      } ()
+      // 那 var test 现在就是一个函数了。
+      // 在返回箭头函数的时候，函数里引用了第6行的num，所以该函数不进行销毁。
+      // 如果销毁了，那么test()的时候，num就不翼而飞，找不到了。
+      // 现在 test就相当于
+      var test = function () {
+        return num++;
+      }
+      for (var i = 0; i < 20; i++) {
+        test()
+        // 这里就相当于调用了20次的test，test存储的num也就变成了20
+      }
+      console.log(test());
+      // 最后又输出了一次，num+1，变成了21。
+   */
+
+
+    /*  JS解析顺序 */
+    var foo = function (x, y) {
+      return x - y;
+    }
+    function foo (x, y) {
+      return x + y;
+    }
+    var num = foo(1, 2);
+    console.log(num) // -1
+    /*
+    匿名函数，需要通过变量引用指向函数的运行结果。
+    var foo=function(x,y){      //赋值式函数
+    return x-y;
+    }
+    有名函数，可以单独定义。
+    function foo(x,y){         //声明式函数
+    return x+y;
+    }
+    实际调用
+    var num=foo(1,2); //调用赋值式函数  return x-y  为  -1
+    */
+
+
+    /* 行内元素和块级元素 */
+    // <address>、<center>、<h1>~<h6>、<hr>、<p>、<pre>、<ul>、<ol>、<dl>、<table>、<div>、<form>
+    // <span>、<a>、<br>、<b>、<strong>、<img>、<input>、<textarea>、<select>、<sup>、<sub>、<em>、<del>
+
+    // 不支持冒泡： “俺（unload）”“妈（mouseenter） 妈（mouseleave） 不（blur） 让（resize） 浪（load） 费（focus）”
+
+    // 有var d = new Date('2018-05-09')，可以设置为6月份的操作是？（）
+    /*  d.setMonth(5);      setMonth(n)，这里是0-11分别对应1-12月
+     d.setDate(40);      d.setDate(n);
+      n表示一个月中的一天的一个数值（1 ~ 31）:
+      0 为上一个月的最后一天
+      -1 为上一个月最后一天之前的一天
+      如果当月有 31 天:
+      32 为下个月的第一天
+      如果当月有 30 天:
+      32 为下一个月的第二天;
+      40 为下一个月的第9天;
+     */
+
+    /*  在一个表单中，如果想要给输入框添加一个输入验证，可以用下面的哪个事件实现？ */
+
+  </script>
+  <style>
+
+
+  </style>
+</body>
+
+</html>

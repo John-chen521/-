@@ -37,6 +37,8 @@ Array.from()方法用于将两类对象转为真正的数组：类似数组的�
 4. DOM的属性查找 其中选择器查找返回元素是类数组
 5. 元素内容
 ## JavaScript中的arguments
+arguments 是一个对应于传递给函数的参数的类数组对象。arguments 对象只能在函数内使用。例子：遍历参数求和。就是传递进函数的参数列表。Arguments存储了所有传递过来的实参
+因为写形参时不知道用户方传多少参数，在JavaScript中arguments实际上它是当前函数的一个内置对象，所以的函数都内置了一个arguments对象，arguments对象中存储了传递的所有传递过来的实参。
 ## 如何正确判断this
 this的不同的情况：
 1. 以函数的形式调用时，this永远都是window

@@ -1,0 +1,94 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: azure;
+  background-size: cover;
+  color: #fff;
+  height: 945;
+  width: 1920;
+}
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.nav-bar p {
+  font-size: large;
+  color: cornflowerblue;
+  margin: 15px;
+}
+/*TODO：请补充代码*/
+div .nav-bar{
+  width: 55px;
+  margin-bottom: 20px;
+}
+/* .content-container{
+  
+
+} */
+img {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  position: relative;
+  /* ps: -75px; */
+  top: -80px;
+  bottom: 0px;
+  
+}
+.content{
+  height: 600px;
+  width: 450px;
+  background-color: rgb(0,0,0,.45);
+  align-items: center;
+  margin: 0 auto;
+  text-align: center;
+  /* position: absolute; */
+  position:absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  
+}
+div .form{
+  margin-top: 0;
+
+}
+h2{
+  font-size: 45px;
+  font-weight: 800;
+  /* margin-top: 0px; */
+  /* margin: 0 auto; */
+  position: relative;
+  top: -80px;
+  /* margin-bottom: 50px; */
+}
+button{
+  width: 80px;
+  height: 30px;
+  border-color: #041c32;
+  background-color: #2d4263;
+  font-size: 16px;
+  color: white;
+  margin-top: 20px;
+  margin: 10px;
+}
+input{
+  font-size: 20px;
+  border-radius: 5px;
+  width: 300px;
+  text-align: center;
+  color: black;
+}
+input[type=password]{
+  margin-top: 20px;
+}
+div .text a{
+  color: white;
+  margin-top: 20px;
+}

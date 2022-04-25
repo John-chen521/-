@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 下列布局在页面上的宽度比是多少？ -->
+
+  <style>
+    .flex {
+      display: flex;
+      width: 200px;
+      height: 100px;
+    }
+
+    .left {
+      flex: 3 0 50px;
+      background: red;
+    }
+
+    /* 
+    flex 属性用于设置或检索弹性盒模型对象的子元素如何分配空间。 
+    flex: flex-grow flex-shrink flex-basis|auto|initial|inherit;
+    flex-grow	一个数字，规定项目将相对于其他灵活的项目进行扩展的量。
+    flex-shrink	一个数字，规定项目将相对于其他灵活的项目进行收缩的量。
+    flex-basis	项目的长度。合法值："auto"、"inherit" 或一个后跟 "%"、"px"、"em" 或任何其他长度单位的数字。
+    */
+
+    .right {
+      flex: 2 0 100px;
+      background: blue;
+    }
+  </style>
+  <!--  html -->
+  <div class="flex">
+    <div class="left"></div>
+    <div class="right"></div>
+  </div>
+</body>
+
+</html>

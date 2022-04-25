@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    img {
+      width: 50px;
+      height: 50px;
+
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <img src="./004/1.png" id="wait-icon">
+  <script>
+    var imgBox = document.querySelector("img")
+    document.onmousemove = function (e) {
+      // console.log("dhh")
+      // 拿到光标相对于窗口的坐标点位
+      var x = e.clientX
+      var y = e.clientY
+      // console.log(x,y)
+      // 把x和y的值赋值给img标签的left和top样式
+      imgBox.style.left = x + 'px'
+      imgBox.style.top = y + 'px'
+    }
+    function SearchAnim (opts) {
+      for (var i in SearchAnim.DEFAULTS) {
+        if (opts[i] === undefined) {
+          opts[i] = SearchAnim.DEFAULTS[i];
+        }
+      }
+      this.opts = opts;
+      this.timer = null;
+      this.elem = document.getElementById(opts.elemId);
+      this.startAnim();
+    }
+    SearchAnim.prototype.startAnim = function () {
+      this.stopAnim();
+      this.timer = setInterval(() => {
+        var startIndex = this.opts.startIndex;
+        if (startIndex == 360) {
+          this.opts.startIndex = 0;
+        }
+        this.elem.style.transform = "rotate(" + (startIndex) + "deg)";
+        this.opts.startIndex += 5;
+      }, this.opts.delay);
+      setTimeout(() => {
+        this.stopAnim();
+      }, this.opts.duration);
+    }
+    SearchAnim.prototype.stopAnim = function () {
+      if (this.timer != null) {
+        clearInterval(this.timer);
+      }
+    }
+    SearchAnim.DEFAULTS = {
+      duration: 60000,
+      delay: 200,
+      direction: true,
+      startIndex: 0,
+      endIndex: 360
+    }
+    new SearchAnim({
+      elemId: "wait-icon",
+      delay: 20,
+    });
+  </script>
+</body>
+
+</html>

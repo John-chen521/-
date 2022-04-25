@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>任务管理器</title>
+
+  <link type="text/css" href="css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div id="box">
+    <div class="head">
+      <h2>Todos</h2>
+      <p>罗列日常计划，做一个时间管理大师！</p>
+      <div class="input">
+        <span>内容
+
+        </span>
+        <input type="text" placeholder="请输入你要做的事" v-model="inputValue" />
+        <span id="add" @click="handleAdd()">确认</span>
+        <span id="add" @click="handleAdd()">确认</span>
+      </div>
+    </div>
+
+    <ul class="list">
+      <li v-show="!datalist.length">暂无数据</li>
+      <li v-for="(data,index) in datalist">
+        <span class="xh">{{index+1}}</span>
+        <span>{{data}}</span>
+        <span class="qc" @click="handleDel(index)">qc</span>
+      </li>
+      <li>
+        <b> 总数：{{datalist.length}} </b>
+        <b id="clear" @click="handleDelAll()">清除</b>
+      </li>
+    </ul>
+  </div>
+  <script src="js/vue.js"></script>
+  <script>
+    var top = new Vue({
+      el: "#box",
+      // 在此处补全代码，实现所需功能
+      data: {
+        datalist: [],
+        xh: [1, 2, 3],
+        // n: "",
+        inputValue: "请输入你要做的事"
+
+      },
+      methods: {
+        handleAdd () {
+          // console.log("hc")
+          this.datalist.push(this.inputValue)
+          this.inputValue = ""
+        },
+        handleDel (index) {
+          this.datalist.splice(index, 1)
+
+        },
+        handleDelAll () {
+          // this.datalist.length = 0
+          this.datalist.splice(0, this.datalist.length)
+
+        }
+
+      }
+    });
+  </script>
+</body>
+
+</html>

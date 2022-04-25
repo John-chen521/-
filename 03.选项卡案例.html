@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 清楚基本样式和UL li的样式 */
+        * {
+           margin: 0;
+           padding: 0;
+        }
+
+        ul,ol,li { 
+            list-style: none;
+        }
+
+        /* 盒子样式，居中，有边框 */
+        .box {
+            width: 600px;
+            height: 400px;
+            border: 3px solid pink;
+            margin: 50px auto;
+            display: flex;
+            /* 列 */
+            flex-direction: column;
+        }
+        /* 子结合符，子元素选择器，
+        选择作为 box 元素子元素的所有 ul 元素，三个按钮横向排列， */
+        .box > ul {
+            height: 60px;
+            display: flex;
+        }
+        /* 居中， */
+        .box > ul > li {
+            /* 页面自适应伸缩比例值，在设置多个值的情况下比例起作用 */
+            flex: 1;
+            color: red;
+            background-color: royalblue;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* 光标，一只手 */
+            cursor: pointer;
+        }
+
+        .box > ul >li.active{
+            background-color: salmon;
+        }
+
+
+        /* 显示内容的盒子,同一位置，不同层级*/
+        .box > ol {
+            flex: 1;
+            position: relative;
+        }
+        .box > ol > li {
+            width: 100%;
+            height: 100%;
+            background-color: blue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: snow;
+            font-size: 100px;
+
+            position: absolute;
+            left: 0;
+            top: 0;
+          
+
+            display: none; 
+        }
+
+        .box > ol > li.active {
+            display: flex;
+        }
+    </style>
+</head>
+<!-- 页面布局的书写 -->
+<body>
+    <!-- .box -->
+    <!-- <div class="box"> -->
+        <!-- ul>li*3{$} -->
+        <!-- <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </div> -->
+    <div class="box">
+        <!-- ul下三个li表示三个按钮盒子，ol下三个li表示三个切换内容的盒子 -->
+        <ul>
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+        <ol>
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+        </ol>
+    </div>
+    <script>
+        // 1.获取元素
+        var btns = document.querySelectorAll('ul>li')
+        var tabs = document.querySelectorAll('ol>li')
+
+        // 2.给btns里所有按钮添加点击事件
+        btns.forEach(function(item,index){
+            item.onclick = function(){
+                // 点击的按钮的标签状态
+                // console.log(item)
+                // 点击的按钮索引
+                // console.log(index)
+
+                // 2.1 给btns和tabs里面的所有内容取消 active 类名
+                btns.forEach(function(t,i){
+                    // ul中所有的标签状态
+                    // console.log(t)
+                    // <li class="active">1</li>
+                    // <li class>2</li>
+                    // <li class>3</li>
+                    // console.log(i)
+                    // 0
+                    // 1
+                    // 2
+                    t.className = ''
+                    tabs[i].className = ''
+                })
+
+                // 2.2 当前点击的按钮和索引对应的盒子添加 active 类名
+                item.className = 'active'
+                tabs[index].className = 'active'
+            }
+
+        })
+    </script>
+</body>
+</html>

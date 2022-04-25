@@ -1,0 +1,62 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>www.jb51.net JS旋转动画</title>
+</head>
+<img src="//img.jbzj.com/file_images/article/201807/201879100307926.jpg" id="wait-icon" />
+<script>
+  //图片动画封装
+  //构造函数模式的目的就是为了创建一个自定义类，并且创建这个类的实例。构造函数模式中拥有了类和实例的概念，并且实例和实例之间是相互独立的，即实例识别。
+  //构造函数就是一个普通的函数，创建方式和普通函数没有区别，不同的是构造函数习惯上首字母大写。另外就是调用方式的不同，普通函数是直接调用，而构造函数需要使用new关键字来调用。
+
+  function SearchAnim (opts) {
+    for (var i in SearchAnim.DEFAULTS) {
+      if (opts[i] === undefined) {
+        opts[i] = SearchAnim.DEFAULTS[i];
+      }
+    }
+    this.opts = opts;
+    this.timer = null;
+    this.elem = document.getElementById(opts.elemId);
+    this.startAnim();
+  }
+  SearchAnim.prototype.startAnim = function () {
+    this.stopAnim();
+    // setInterval() 方法可按照指定的周期（以毫秒计）来调用函数或计算表达式。
+    this.timer = setInterval(() => {
+      var startIndex = this.opts.startIndex;
+      if (startIndex == 360) {
+        this.opts.startIndex = 0;
+      }
+      this.elem.style.transform = "rotate(" + (startIndex) + "deg)";
+      this.opts.startIndex += 5;
+    }, this.opts.delay);
+    setTimeout(() => {
+      this.stopAnim();
+    }, this.opts.duration);
+  }
+  SearchAnim.prototype.stopAnim = function () {
+    if (this.timer != null) {
+      clearInterval(this.timer);
+    }
+  }
+  SearchAnim.DEFAULTS = {
+    duration: 60000,
+    delay: 200,
+    direction: true,
+    startIndex: 0,
+    endIndex: 360
+  }
+  new SearchAnim({
+    elemId: "wait-icon",
+    delay: 20,
+  });
+</script>
+
+<body>
+</body>
+
+</html>

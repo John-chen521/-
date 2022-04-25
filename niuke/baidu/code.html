@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /* function addToList (item, list) {
+      return list.push(item)
+      // push() 方法将一个或多个元素添加到数组的末尾，并返回该数组的新长度。
+    }
+    const result = addToList("nowcoder", ["hello"])
+    console.log(result) */
+
+
+
+
+
+    /*
+    它可以紧跟在一个函数名后面，该函数将被调用来处理这个模板字符串。这被称为“标签模板”功能（tagged template）。
+    标签模板其实不是模板，而是函数调用的一种特殊形式。“标签”指的就是函数，紧跟在后面的模板字符串就是它的参数。
+    但是，如果模板字符里面有变量，就不是简单的调用了，而是会将模板字符串先处理成多个参数，再调用函数。
+    tag函数的第一个参数是一个数组，该数组的成员是模板字符串中那些没有变量替换的部分，也就是说，
+    变量替换只发生在数组的第一个成员与第二个成员之间、第二个成员与第三个成员之间，以此类推。
+    tag函数的其他参数，都是模板字符串各个变量被替换后的值。
+    */
+    /*  function getPersonInfo (one, two, three) {
+       console.log(one)
+       console.log(two)
+       console.log(three)
+     }
+     const person = 'Lydia'
+     const age = 21
+     getPersonInfo`${person} is ${age} years old` */
+
+
+
+
+    /* Promise.all([]).then((res) => {
+      console.log('all');
+    });
+    // Promise.all()方法用于将多个 Promise 实例，包装成一个新的 Promise 实例。
+    // Promise.all()方法接受一个数组作为参数，p1、p2、p3都是 Promise 实例，
+    // 如果不是，就会先调用下面讲到的Promise.resolve方法，将参数转为 Promise 实例，再进一步处理。
+
+    Promise.race([]).then((res) => {
+      console.log('race');
+    });
+    // Promise.race()方法的参数与Promise.all()方法一样，如果不是 Promise 实例，
+    // 就会先调用下面讲到的Promise.resolve()方法，将参数转为 Promise 实例，再进一步处理。
+    // race则是让最先settle的promise执行。 */
+
+
+    /* filter返回一个新的、由通过测试的元素组成的数组，如果没有任何数组元素通过测试，则返回空数组。
+forEach对每个元素进行操作，对原数组造成影响，无返回值。 */
+
+
+
+
+
+    /* 内存泄漏是 javascript 代码中必须尽量避免的，以下几段代码可能会引起内存泄漏的有
+   内存泄漏（Memory Leak）是指程序中己动态分配的堆内存由于某种原因程序未释放或无法释放，
+   造成系统内存的浪费，导致程序运行速度减慢甚至系统崩溃等严重后果。 */
+    /* function getName() {
+        name = 'javascript'
+    }
+    getName()
+     */
+
+    /* const elements = {
+       button: document.getElementById('button')
+   };
+   function removeButton() {
+       document.body.removeChild(elements.button);
+   }
+   removeButton()
+     */
+
+    /* let timer = setInterval(() => {
+        const node = document.querySelector('#node')  
+        if(node) {
+            clearInterval(timer)
+        }
+    }, 1000);
+     */
+    /* （1）是意外的全局变量
+    在js中，一个未声明变量的使用，会在全局对象中创建一个新的变量；
+    解决方式： 在js文件开头添加 ‘use strict'，开启严格模式。
+    （2）脱离 DOM 的引用
+    元素引用没有清理
+    解决方法： a = null;
+    给DOM对象添加的属性是一个对象的引用
+    解决方法：在window.onload时间中加上 document.getElementById('id').diyProp = null;
+    事件的绑定没有移除
+    解决方法： 移除时间的监听
+    这里的（3）已经清除了计数器，所以不会造成泄漏。 
+    定时器setInterval或者setTimeout在不需要使用的时候，没有被clear，
+    导致定时器的回调函数及其内部依赖的变量都不能被回收，这就会造成内存泄漏。
+    解决方式：当不需要interval或者timeout的时候，调用clearInterval或者clearTimeout
+
+    传递给console.log的对象是不能被垃圾回收，所以没有去掉console.log可能会存在内存泄漏
+
+
+    https://www.jb51.net/article/187661.htm
+    */
+
+
+
+    /* sourcemap 文件 */
+
+
+    /*
+    canvas:
+    */
+
+    /*
+        1、min-height和height同时使用，谁大听谁的
+    
+    2、max-height和height同时使用，谁小听谁的
+    
+    3、height、min-heigth和max-height同时使用，分为以下情况
+    
+    height > max-height > min-height 元素高度：max-height
+    height > min-height > max-height 元素高度：min-height
+    min-height > height > max-height 元素高度：min-height
+    min-height > max-height > height 元素高度：min-height
+    max-height > height > min-height 元素高度：height
+    max-height > min-height > height 元素高度：min-height */
+
+
+
+    /*  程序的时间复杂度 */
+
+
+    /* 算法平均时间复杂度和额外空间复杂度(传进来的tempStr不算额外的空间)最接近为多少 */
+
+
+    /* linux
+    du查看目录大小，df查看磁盘使用情况。fdisk：用于磁盘分区
+    
+    */
+  </script>
+  <style>
+    .text:nth-last-child(2) {
+      color: red;
+    }
+  </style>
+
+</body>
+
+</html>
